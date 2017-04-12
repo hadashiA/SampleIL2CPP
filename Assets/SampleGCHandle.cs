@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using System.Threading;
 using UnityEngine;
 
@@ -43,6 +44,7 @@ public class SampleGCHandle : MonoBehaviour
         var gcHandle = GCHandle.Alloc(anyClassForGCHandle);
 
         var anyStruct = new AnyStruct(100, 200, 300);
+        GC.Collect();
     }
 
     static void AnotherThread()
